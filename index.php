@@ -16,6 +16,10 @@ if(isset($_POST['button']) && $_POST['button'] == 'low'){
     echo 'chummed thrice';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
+}else if(isset($_POST['button']) && $_POST['button'] == 'severe'){
+    echo 'chummed fourth time';
+    $_SESSION['counter'] = $_SESSION['counter'] + 1;
+    echo $_SESSION['counter'];
 }
 
 
