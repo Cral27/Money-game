@@ -8,19 +8,20 @@ if(isset($_POST['low']) && $_POST['low'] == 'bet'){
     echo 'chummed';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
-}else if(isset($_POST['button']) && $_POST['button'] == 'moderate'){
+}else if(isset($_POST['moderate']) && $_POST['moderate'] == 'bet'){
     echo 'chummed twice';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
-}else if(isset($_POST['button']) && $_POST['button'] == 'high'){
+}else if(isset($_POST['high']) && $_POST['high'] == 'bet'){
     echo 'chummed thrice';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
-}else if(isset($_POST['button']) && $_POST['button'] == 'severe'){
+}else if(isset($_POST['severe']) && $_POST['severe'] == 'bet'){
     echo 'chummed fourth time';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
-}else if(isset($_POST['button']) && $_POST['button'] == 'reset'){
+}else if(isset($_POST['reset']) && $_POST['reset'] == 'Reset Game'){
+    $_SESSION['counter'] = 0;
     echo 'chummed all over me';
 }
 
@@ -84,9 +85,9 @@ if(isset($_POST['low']) && $_POST['low'] == 'bet'){
         <main>
             <header>
                 <h2>Your Money: 'Value'</h2>
-                <form action="" id='reset-container'>
+                <form action="" id='reset-container' method='post'>
                     <input type="hidden" name='button' value='reset'>
-                    <input type="submit" value='Reset Game' id='reset'>
+                    <input type="submit" name='reset' value='Reset Game' id='reset'>
                 </form>
             </header>
             <div>
