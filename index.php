@@ -8,6 +8,10 @@ if(isset($_POST['button']) && $_POST['button'] == 'low'){
     echo 'chummed';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
     echo $_SESSION['counter'];
+}else if(isset($_POST['button']) && $_POST['button'] == 'moderate'){
+    echo 'chummed twice';
+    $_SESSION['counter'] = $_SESSION['counter'] + 1;
+    echo $_SESSION['counter'];
 }
 
 
