@@ -2,6 +2,15 @@
 
 session_start();
 
+var_dump($_SESSION['counter']);
+$coutner = 0;
+if(isset($_POST['button']) && $_POST['button'] == 'low'){
+    echo 'chummed';
+    $_SESSION['counter'] = $_SESSION['counter'] + 1;
+    echo $_SESSION['counter'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,28 +73,28 @@ session_start();
                 <input type="submit" value='Reset Game' id='reset'>
             </header>
             <div>
-                <form action="process.php" method='post'>
+                <form action="" method='post'>
                     <input type="hidden" name='button' value='low'>
                     <h2>Low Risk</h2>
-                    <input type="submit" value='Bet'>
+                    <input type="submit" value='low' name='button'>
                     <p>by -25 up to 100</p>
                 </form>
-                <form action="process.php" method='post'>
+                <form action="" method='post'>
                     <input type="hidden" name='button' value='moderate'>
                     <h2>Moderate Risk</h2>
-                    <input type="submit" value='Bet'>
+                    <input type="submit" value='moderate' name='button'>
                     <p>by -100 up to 1000</p>
                 </form>
-                <form action="process.php" method='post'>
+                <form action="" method='post'>
                     <input type="hidden" name='button' value='high'>
                     <h2>High Risk</h2>
-                    <input type="submit" value='Bet'>
+                    <input type="submit" value='high' name='button'>
                     <p>by -500 up to 2500</p>
                 </form>
-                <form action="process.php" method='post'>
+                <form action="" method='post'>
                     <input type="hidden" name='button' value='severe'>
                     <h2>Severe Risk</h2>
-                    <input type="submit" value='Bet'>
+                    <input type="submit" value='severe' name='button'>
                     <p>by -3000 up to 5000</p>
                 </form>
             </div>
