@@ -2,30 +2,47 @@
 
 session_start();
 
+$winLose = rand(1,100); // determines whether player wins or not
+$numDivide = rand(1,5); // determines how much player losses or wins
+$dateTime = date("H:i:s Y-m-d"); // determines time and date
+
+//determine which buttons work
 var_dump($_SESSION['counter']);
-$coutner = 0;
+// $counter = 0;
 if(isset($_POST['low']) && $_POST['low'] == 'bet'){
-    echo 'chummed';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
-    echo $_SESSION['counter'];
+    echo $_SESSION['counter'] . "<br>";
+    if($winLose > 60){
+        echo $winLose . "<br>";
+        echo (round((25/$numDivide)/5)*5) . "<br>" . "loser" . "<br>";
+    }else{
+        echo $winLose . "<br>";
+        echo round((100/$numDivide),-1) . "<br>" . "winner" . "<br>";
+    }
 }else if(isset($_POST['moderate']) && $_POST['moderate'] == 'bet'){
-    echo 'chummed twice';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
-    echo $_SESSION['counter'];
+    if($winLose > 50){
+        echo $winLose . "<br>";
+        echo round((100/$numDivide),-1) . "<br>" . "loser" . "<br>";
+    }else{
+        echo $winLose . "<br>";
+        echo round((1000/$numDivide),-2) . "<br>" . "winner" . "<br>";
+    }
 }else if(isset($_POST['high']) && $_POST['high'] == 'bet'){
-    echo 'chummed thrice';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
-    echo $_SESSION['counter'];
+    echo $_SESSION['counter'] . "<br>";
+    echo $winLose . "<br>";
 }else if(isset($_POST['severe']) && $_POST['severe'] == 'bet'){
-    echo 'chummed fourth time';
     $_SESSION['counter'] = $_SESSION['counter'] + 1;
-    echo $_SESSION['counter'];
+    echo $_SESSION['counter'] . "<br>";
+    echo $winLose . "<br>";
 }else if(isset($_POST['reset']) && $_POST['reset'] == 'Reset Game'){
     $_SESSION['counter'] = 0;
-    echo 'chummed all over me';
+    echo $_SESSION['counter'];
 }
-
-
+$t = time();
+// echo date("H:i:s Y-m-d") . "<br>";
+//determining the values being set
 ?>
 
 <!DOCTYPE html>
